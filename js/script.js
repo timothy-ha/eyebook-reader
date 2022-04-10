@@ -12,14 +12,11 @@ webgazer.setGazeListener(function(data, elapsedTime) {
     // var xprediction = data.x; //these x coordinates are relative to the viewport
     // var yprediction = data.y; //these y coordinates are relative to the viewport
 
-	if (0 < data.y < window.innerHeight) {
-		if (data.y > window.innerHeight/2 + threshold) {
-			scroll(1000);
-		} else if (data.y < window.innerHeight/2 - threshold) {
-			scroll(-1000);
-		}
+	if (data.y > window.innerHeight/2 + threshold) {
+		scroll(250);
+	} else if (data.y < window.innerHeight/2 - threshold) {
+		scroll(-250);
 	}
-
 
 	console.log(data);
 }).begin();
