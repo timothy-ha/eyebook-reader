@@ -3,7 +3,7 @@ function scroll(speed) {
 }
 
 let direction = 0;
-let threshold = window.innderHeight * 0.1;
+let threshold = window.innerHeight * 0.5;
 
 webgazer.setGazeListener(function(data, elapsedTime) {
     if (data == null) {
