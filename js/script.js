@@ -1,22 +1,22 @@
-function scroll(speed) {
-	window.scrollBy(0, speed);
+let delay = 1000; // time expressed in ms
+let distance = 500;
+let threshold = window.innerHeight * 0.3;
+let lastTime = 0;
+
+function scroll(distance, time) {
+	if (time - lastTime > delay) {
+		window.scrollBy({
+			top: distance,
+			behavior: 'smooth'
+		});
+		lastTime = time;
+	}
 }
 
-let direction = 0;
-let threshold = window.innerHeight * 0.5;
-
 webgazer.setGazeListener(function(data, elapsedTime) {
-    if (data == null) {
-        return;
-    }
-    // var xprediction = data.x; //these x coordinates are relative to the viewport
-    // var yprediction = data.y; //these y coordinates are relative to the viewport
-
-	if (data.y > window.innerHeight/2 + threshold) {
-		scroll(250);
-	} else if (data.y < window.innerHeight/2 - threshold) {
-		scroll(-250);
-	}
+    if (data == null) return;
+	if (data.y > window.innerHeight/2 + threshold) scroll(distance, elapsedTime);		
+	else if (data.y < window.innerHeight/2 - threshold) scroll(-distance, elapsedTime);
 
 	console.log(data);
 }).begin();
