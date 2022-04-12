@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<title>eyebook-reader</title>
+
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        iframe { 
+            transition: transform 400ms;
+            width: 50vw;
+            height: 100vh;
+        }
+
+        iframe.left {
+            transform: translateX(-100vw);
+        }
+
+        iframe.right {
+            transform: translateX(100vw);
+        }
+        iframe.next {
+            display: none;
+        }
+
+    </style>
+
+	<script src="js/webgazer.js" defer></script>
+	<script src="js/script.js" defer></script>	
+</head>
+
+<body>
+
+    <div>
+
+    </div>
+
+    <!-- <div class="parent"> 
+
+        <span>This is some text on the left. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
+        
+        <iframe src="HW_03 .pdf" width="100%" height="800"></iframe>
+        
+        <span>This is some text on the right. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </span>
+
+
+    -->
+	
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery-3.6.0.min.js"></script>
+</body>
+
+</html>
